@@ -1,0 +1,55 @@
+.line {
+  border: 1px solid cyan;
+}
+.line .img {
+
+}
+.line .num {
+  background-color: #ddd;
+}
+.line .text {
+  line-height: 60px;
+  background-color: #999;
+}
+
+.box {
+  height: 50px;
+}
+
+.destination {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4880fe;
+}
+
+.transition-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fe4875;
+  position: fixed;
+}
+
+.week {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(2, 84px);
+  grid-row-gap: 8px;
+  grid-column-gap: 8px;
+  margin-top: 14px;
+  & > .day {  
+      // ...
+      border-radius: 10px;
+      background-color: rgba(1,2,3,.3);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 16px;
+  }
+  > .day7 {
+    grid-column-start: span 2
+  }
+}
