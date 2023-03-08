@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import './index.scss'
 import leftArrow from '@/assets/left-arrow.svg'
 
-const Index = () => {
+const Index = (props: any) => {
   return (
     <>
       <div className="navbar">
@@ -13,7 +13,7 @@ const Index = () => {
           </div>
           <div className="navbar-center">首页</div>
           <div className="navbar-right">
-            记录
+            记录{props.count}
           </div>
         </div>
       </div>

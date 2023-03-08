@@ -1,11 +1,32 @@
-import React, {useRef, useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, {useRef, useState, useContext} from 'react'
 import star from '@/assets/react.svg'
 import './index.scss'
 import Navbar from '@/components/navbar'
+import {allStore} from '@/store/index'
+import {observer} from 'mobx-react-lite'
+import { makeAutoObservable } from 'mobx'
+
+// const state = makeAutoObservable({
+//   count: 123,
+//   add () {
+//     state.count ++
+//   }
+// })
+const state = new class State {
+  constructor () {
+    makeAutoObservable(this)
+  }
+  count = 123
+  
+  add () {
+    this.count ++
+  }
+}
 
 const Index =  () => {
-
+  const {homeStore} = allStore
+  console.log(123)
+  
   const refList = [] as HTMLDivElement[]
 
   const destinationDom = useRef<HTMLDivElement>(null)
@@ -14,16 +35,8 @@ const Index =  () => {
     if(dom) refList.push(dom)
   }
 
-  const [transitionStyle, setTransitionStyle] = useState({
-    display: 'none',
-    top: 0,
-    left: 0,
-    transform: 'scale(0)',
-    transition: 'none'
-  })
-
   const canGather = useRef(true)
-
+  
   function gather (index: number) {
     if(!canGather.current) return
     canGather.current = false
@@ -31,7 +44,7 @@ const Index =  () => {
     const target = refList[index].getBoundingClientRect()
     const destination = destinationDom.current!.getBoundingClientRect()
     
-    setTransitionStyle({
+    homeStore.setTransitionStyle({
       display: 'block',
       top: target.top,
       left: target.left,
@@ -40,7 +53,7 @@ const Index =  () => {
     })
 
     setTimeout(() => {
-      setTransitionStyle({
+      homeStore.setTransitionStyle({
         display: 'block',
         top: destination.top,
         left: destination.left,
@@ -49,7 +62,7 @@ const Index =  () => {
       })
     },0)
     setTimeout(() => {
-      setTransitionStyle({
+      homeStore.setTransitionStyle({
         display: 'none',
         top: 0,
         left: 0,
@@ -62,7 +75,7 @@ const Index =  () => {
 
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar count={state.count} />
       <div className="home">
         <div ref={destinationDom} className='destination'></div>
         目的地
@@ -79,10 +92,11 @@ const Index =  () => {
           ))}
         </div>
         {/* 注意样式，position: fixed */}
-        <div className='transition-div' style={transitionStyle}></div>
-      </div>
+        <div className='transition-div' style={{...homeStore.transitionStyle}}></div>
+        <button onClick={() => state.add()}>++</button>
+      </div>  
     </React.Fragment>
   )
 }
 
-export default Index
+export default observer(Index)

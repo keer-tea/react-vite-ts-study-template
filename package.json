@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
+    "mobx": "^6.8.0",
+    "mobx-react-lite": "^3.4.2",
     "postcss": "^8.4.21",
     "postcss-pxtorem": "^6.0.0",
     "react": "^18.2.0",

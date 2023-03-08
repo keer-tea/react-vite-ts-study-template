@@ -13,6 +13,8 @@ specifiers:
   eslint: ^8.35.0
   eslint-plugin-react: ^7.32.2
   eslint-plugin-react-hooks: ^4.6.0
+  mobx: ^6.8.0
+  mobx-react-lite: ^3.4.2
   postcss: ^8.4.21
   postcss-pxtorem: ^6.0.0
   react: ^18.2.0
@@ -26,6 +28,8 @@ specifiers:
 
 dependencies:
   amfe-flexible: 2.2.1
+  mobx: 6.8.0
+  mobx-react-lite: 3.4.2_woojb62cqeyk443mbl7msrwu2e
   postcss: 8.4.21
   postcss-pxtorem: 6.0.0_postcss@8.4.21
   react: 18.2.0
@@ -3686,6 +3690,28 @@ packages:
     dependencies:
       brace-expansion: 1.1.11
     dev: true
+
+  /mobx-react-lite/3.4.2_woojb62cqeyk443mbl7msrwu2e:
+    resolution: {integrity: sha512-wOFI6qhMBucYNy00aSDoee23L2//wKYJp4z5k+YOhOCY303prwLaWiEhJU0H2c//oIEEswGqUHtVV2qptk/g5g==}
+    peerDependencies:
+      mobx: ^6.1.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      mobx: 6.8.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /mobx/6.8.0:
+    resolution: {integrity: sha512-+o/DrHa4zykFMSKfS8Z+CPSEg5LW9tSNGTuN8o6MF1GKxlfkSHSeJn5UtgxvPkGgaouplnrLXCF+duAsmm6FHQ==}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
