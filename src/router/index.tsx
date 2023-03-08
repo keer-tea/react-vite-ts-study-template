@@ -25,7 +25,7 @@ const Home = lazy(async () => {
     }, 2)
   })  
 })
-const Detail = lazy(() => import('../pages/detail'))
+const Detail = lazy(() => import('../pages/rule'))
 const Record = lazy(() => import('../pages/record'))
 
 export default createHashRouter([

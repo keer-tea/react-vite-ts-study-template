@@ -23,7 +23,7 @@
     "rules": {
       "no-empty-function": "off",
       "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/ban-ts-comment": "warn",
       // 缩进必须为 2 个空格 https://eslint.org/docs/latest/rules/indent#rule-details
       "indent": ["error", 2],
@@ -52,6 +52,7 @@
       // https://typescript-eslint.io/rules/no-explicit-any/
       "@typescript-eslint/no-explicit-any": "off",
       // https://eslint.org/docs/latest/rules/no-async-promise-executor
-      "no-async-promise-executor": "error"
+      "no-async-promise-executor": "error",
+      "@typescript-eslint/no-non-null-assertion": "off"
     }
 }

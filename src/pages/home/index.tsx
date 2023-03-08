@@ -2,18 +2,9 @@ import React, {useRef, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import star from '@/assets/react.svg'
 import './index.scss'
+import Navbar from '@/components/navbar'
 
 const Index =  () => {
-  // 路由跳转
-  const router = useNavigate()
-
-  function toDetail () {
-    router('/detail')
-  }
-
-  function toRecord () {
-    router('/record')
-  }
 
   const refList = [] as HTMLDivElement[]
 
@@ -71,32 +62,25 @@ const Index =  () => {
 
   return (
     <React.Fragment>
-      <div>home 页</div>
-      <br />
-      <div ref={destinationDom} className='destination'></div>
-      目的地
-      <br />
-      <br />
-      <button onClick={toDetail}>去 detail</button>
-      <br />
-      <br />
-      <button onClick={toRecord}>去 record</button>
-      <br />
-      <br />
-      <div className='box'></div>
-      <div className='week'>
-        {[1,2,3,4,5,6,7].map((item, index) => (
-          <div ref={getRef} className={`day day${index + 1}`} key={`${item}`} onClick={() => gather(index)}>
-            <div className='day-num'>第{item}天</div>
-            <div className='top'>
-              <img className='img' src={star} />
+      <Navbar />
+      <div className="home">
+        <div ref={destinationDom} className='destination'></div>
+        目的地
+        <div className='box'></div>
+        <div className='week'>
+          {[1,2,3,4,5,6,7].map((item, index) => (
+            <div ref={getRef} className={`day day${index + 1}`} key={`${item}`} onClick={() => gather(index)}>
+              <div className='day-num'>第{item}天</div>
+              <div className='top'>
+                <img className='img' src={star} />
+              </div>
+              <div className='bottom'>5积分</div>
             </div>
-            <div className='bottom'>5积分</div>
-          </div>
-        ))}
+          ))}
+        </div>
+        {/* 注意样式，position: fixed */}
+        <div className='transition-div' style={transitionStyle}></div>
       </div>
-      {/* 注意样式，position: fixed */}
-      <div className='transition-div' style={transitionStyle}></div>
     </React.Fragment>
   )
 }

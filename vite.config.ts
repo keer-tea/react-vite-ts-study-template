@@ -8,6 +8,9 @@ import gzipPlugin from 'rollup-plugin-gzip'
 // https://vitejs.dev/config/
 export default defineConfig((config) => {
   return {
+    optimizeDeps: {
+      force: true // 设置为 true 可以强制依赖预构建，而忽略之前已经缓存过的、已经优化过的依赖。
+    },
     plugins: [
       react({
         babel: {

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './index.scss'
 
 const Index =  () => {
   // 路由跳转
