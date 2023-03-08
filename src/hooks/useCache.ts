@@ -1,7 +1,7 @@
 interface Cb {
   (...arg: unknown[]): unknown
 }
-const cacheMap = new Map();
+const cacheMap = new Map()
 
 export default (key: string, callback: Cb) => {
   return async (cache = true) => {

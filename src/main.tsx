@@ -8,7 +8,7 @@ if (import.meta.env.PROD) {
   import('https://cdn.staticfile.org/vConsole/3.3.4/vconsole.min.js').then(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    new window.VConsole();
+    new window.VConsole()
   })
 }
 

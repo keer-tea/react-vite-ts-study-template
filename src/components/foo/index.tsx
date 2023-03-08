@@ -5,7 +5,7 @@ interface Props {
   totalScore?: number
 }
 
-const Index = forwardRef(function HeadReward(props: Props, ref: any) {
+const Index = forwardRef(function HeadReward (props: Props, ref: any) {
   return <div>{props.totalScore}</div>
 })
 

@@ -46,6 +46,12 @@
       // 强制默认参数为最后一个 https://eslint.org/docs/latest/rules/default-param-last#rule-details
       "default-param-last": "off",
       // 不允许不必要的分号 https://eslint.org/docs/latest/rules/no-extra-semi#rule-details
-      "no-extra-semi": "off"
+      "no-extra-semi": "off",
+      // 不允许分号
+      "semi": [2, "never"],
+      // https://typescript-eslint.io/rules/no-explicit-any/
+      "@typescript-eslint/no-explicit-any": "off",
+      // https://eslint.org/docs/latest/rules/no-async-promise-executor
+      "no-async-promise-executor": "error"
     }
 }

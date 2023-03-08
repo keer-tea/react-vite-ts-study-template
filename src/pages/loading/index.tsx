@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Index =  () => {
   return <div>loading 中。。。。。</div>

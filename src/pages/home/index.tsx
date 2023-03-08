@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import star from '@/assets/react.svg'
 import './index.scss'
