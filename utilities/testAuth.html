@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三大App融合汇总页面llalal</title>
+    <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        #ulDiv{
+            width: 100%;
+            background: papayawhip;
+        }
+        li{
+            width: 50%;
+            height: 100px;
+            font-size: 50px;
+            border: 1px solid;
+        }
+        #myUrl{
+            width: 60%;
+            height: 80px;
+            font-size: 40px;
+        }
+        button{
+            height: 80px;
+            width: 80px;
+        }
+        #ff-div{
+            border: 2px solid black;
+            margin-top: 50px;
+            height: 50px;
+            line-height: 50px;
+        }
+        #txDiv{
+            height: 100px;
+            width: 50%;
+            font-size: 40px;
+            border: 2px solid;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<ul id ="ulDiv">
+</ul>
+<div>
+    <div id='txDiv' onclick="btnClick({teamName: '通信缴费H5', linkUrl: 'https://h5.test.bestpay.net/subapps/payassistant/payassistant-new/test/index.html'})">通信交费生产链接</div>
+    <label for="myUrl">输入链接</label>
+    <input type="text" id = 'myUrl'/>
+    <button onclick="btnClickFree()">跳转</button>
+</div>
+<div id="ff-div" onclick="feifanClick()">这个是给非凡自己测试用的，其他人用不着,测试端内能不能拉起小翼管家app</div>
+<script>
+    var vConsole = new VConsole()
+    console.log('进入完整路径是--------',window.location.href)
+    var appList = [
+        {teamName: '零金', linkUrl: 'https://h5.test.bestpay.net/subapps/personalfin-loan-h5/loan/index.html'},
+        {teamName: '技术部', linkUrl: 'https://h5.test.bestpay.net/subapps/h5login/index.html#authorizeDemo'},
+        {teamName: '财富', linkUrl: 'https://h5.test.bestpay.net/subapps/financial/index.html#/authorizeDemo'},
+        {teamName: '通信缴费H5', linkUrl: 'https://h5.test.bestpay.net/subapps/payassistant/payassistant-new/test/index.html'},
+        {teamName: '客户端生活缴费H5', linkUrl: 'https://h5.test.bestpay.net/subapps/utilities/prod/main.html?cid=0880000081'}
+    ]
+    var ulDivTemplate = ''
+    for (var i=0;i<appList.length;i++) {
+        ulDivTemplate += "<li onclick='btnClick(appList["+i+"])'>" + appList[i].teamName + "</li>"
+    }
+    document.getElementById('ulDiv').innerHTML = ulDivTemplate;
+    function btnClick(item) {
+        var wholeUrl = item.linkUrl + (item.linkUrl.indexOf('?') > -1 ? ('&' + window.location.search.slice(1)): window.location.search);
+        window.location.href=wholeUrl;
+    }
+    function btnClickFree(){
+        var linkUrl = document.getElementById("myUrl").value
+        if (!linkUrl || linkUrl.indexOf('http') < 0) {
+            alert('请输入合法的链接！')
+            return
+        }
+        btnClick({linkUrl: linkUrl})
+    }
+    function feifanClick() {
+        var linkUrl = document.getElementById("myUrl").value
+        var orAppUrl ='smartwingletsteward://com.yueme.itv?action=1'
+        if (linkUrl.length > 0) {
+            orAppUrl = orAppUrl + '&url=' + linkUrl
+        }
+        window.location.href = orAppUrl
+    }
+</script>
+</body>
+</html>

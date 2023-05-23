@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生活缴费</title>
+</head>
+
+<body>
+  <script>
+    var cid = ''
+    try {
+      if (window.location.hash.includes('?')) {
+        cid = window.location.hash.split('?')[0].split('/')[2]
+      } else {
+        cid = window.location.hash.split('/')[2]
+      }
+    } catch (error) {
+      console.log('🚀 ~ file: main.html:21 ~ error:', error)
+    }
+    var showCid = cid || '0880000100'
+    var url = window.location.origin + '/subapps/utilities/union/main.html?cid=' + showCid
+    window.location.replace(url);
+  </script>
+</body>
+
+</html>
