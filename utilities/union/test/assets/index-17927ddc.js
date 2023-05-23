@@ -1,0 +1,1 @@
+import{u as n,j as r,F as o,a as t}from"./index-de04b7e3.js";const c=()=>{const c=n();return r(o,{children:[t("div",{children:"record 页"}),t("button",{onClick:function(){c(-1)},children:"返回"})]})};export{c as default};
