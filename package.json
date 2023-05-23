@@ -9,7 +9,8 @@
     "dev:prod": "vite --mode prod",
     "build:test": "tsc && vite build --mode test",
     "build:pre": "tsc && vite build --mode pre",
-    "build:prod": "tsc && vite build --mode prod"
+    "build:prod": "tsc && vite build --mode prod",
+    "build:all": ""
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
