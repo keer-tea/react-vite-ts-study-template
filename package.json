@@ -30,6 +30,7 @@
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-legacy": "^4.0.1",
     "@vitejs/plugin-react": "^3.1.0",
+    "bestpay-auto-build": "^1.0.1",
     "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
