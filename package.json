@@ -9,7 +9,8 @@
     "dev:prod": "vite --mode prod",
     "build:test": "tsc && vite build --mode test",
     "build:pre": "tsc && vite build --mode pre",
-    "build:prod": "tsc && vite build --mode prod"
+    "build:prod": "tsc && vite build --mode prod",
+    "bestpay:build": "bestpay-build"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
@@ -30,7 +31,7 @@
     "@typescript-eslint/parser": "^5.54.0",
     "@vitejs/plugin-legacy": "^4.0.1",
     "@vitejs/plugin-react": "^3.1.0",
-    "bestpay-auto-build": "^1.0.1",
+    "bestpay-build": "^0.0.27",
     "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
